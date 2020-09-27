@@ -18,6 +18,7 @@ import Signup from './pages/Signup';
 import PageNotFound from './pages/PageNotFound';
 import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
+import Header from './layout/Header';
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
     <Router>
       <ToastContainer />
       <UserContext.Provider value={{user,setUser}}>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={Signin} />
