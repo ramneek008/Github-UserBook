@@ -17,6 +17,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import PageNotFound from './pages/PageNotFound';
 import { UserContext } from './context/UserContext';
+import Footer from './layout/Footer';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="*" component={PageNotFound} />
         </Switch>
+        <Footer />
       </UserContext.Provider>
     </Router>
   );
