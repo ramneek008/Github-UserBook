@@ -20,6 +20,10 @@ import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 
+import firebaseConfig from './Config/firebaseConfig';
+
+firebase.initializeApp(firebaseConfig);
+
 const App = () => {
 
   const [user, setUser] = useState(null);
