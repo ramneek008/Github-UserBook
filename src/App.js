@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import Home from './pages/Home';
