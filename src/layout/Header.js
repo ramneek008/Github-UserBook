@@ -15,24 +15,36 @@ const Header = () => {
     return(
         <Navbar color="info" light expand="md">
             <NavbarBrand><Link to="/" className="text-white">Github UserBook</Link></NavbarBrand>
+            <NavbarText className="text-white">{
+            context.user ? context.user.email : ""
+            }</NavbarText>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <NavLink tag={Link} to ="/" className="text-white">
-                            SignUp
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={Link} to ="/" className="text-white">
-                            SignIn
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={Link} to ="/" className="text-white">
-                            LogOut
-                        </NavLink>
-                    </NavItem>
+                    {
+                        context.user ? (
+                        <NavItem>
+                            <NavLink tag={Link} to ="/" className="text-white">
+                                LogOut
+                            </NavLink>
+                        </NavItem>
+                        ) : (
+                        <>
+                            <NavItem>
+                                <NavLink tag={Link} to ="/" className="text-white">
+                                    SignUp
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to ="/" className="text-white">
+                                    SignIn
+                                </NavLink>
+                            </NavItem>
+                        </>
+                        )
+                    }
+                    
+                    
                 </Nav>
             </Collapse>
         </Navbar>
