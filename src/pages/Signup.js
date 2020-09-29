@@ -17,16 +17,16 @@ const Signup = () => {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then( res => {
-                console.log(res)
-                context.setUser({email: res.user.email, uid: res.user.uid})
+                console.log(res);
+                context.setUser({email: res.user.email, uid: res.user.uid});
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
                 toast(error.message,{
                     type:"error"
-                })
-            })
-    }
+                });
+            });
+    };
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -34,7 +34,7 @@ const Signup = () => {
     }
 
     if(context.user) {
-        return <Redirect to="/" />
+        return <Redirect to="/" />;
     }
     return(
         <Container className="text-center">
