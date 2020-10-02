@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardBody} from 'reactstrap';
 
-const UserCard = ({user}) {
+const UserCard = ({user}) => {
 
     return(
         <Card className="text-center mt-3 mb-4">
